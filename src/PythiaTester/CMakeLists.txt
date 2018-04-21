@@ -1,7 +1,5 @@
-# include_directories(${CMAKE_SOURCE_DIR}/libutil)
-# include_directories(${CMAKE_SOURCE_DIR}/../include)
-include_directories(${PYTHON_PATH}/include)
-link_directories(${PYTHON_PATH}/libs)
+include_directories(${PYTHON_INCLUDE_DIRS})
+#link_directories(${PYTHON_LIBRARIES})
 link_directories(${CMAKE_LIBRARY_OUTPUT_DIRECTORY})
 
 file(GLOB headers *.h)
@@ -22,7 +20,7 @@ if(CMAKE_CL_64)
 else()
     set_target_properties(PythiaTester PROPERTIES OUTPUT_NAME "PythiaTester")
 endif()
-
+target_link_libraries(PythiaTester ${PYTHON_LIBRARIES})
 # add_definitions(-DEXPMODULE)
 
 # target_link_libraries(PythiaTester debug libutil.lib)
