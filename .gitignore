@@ -28,3 +28,6 @@ bin
 *.exe
 *.dll
 CMakeSettings.json
+*.zip
+vcproj
+vcproj64
